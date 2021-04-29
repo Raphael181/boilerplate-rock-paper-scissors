@@ -3,15 +3,17 @@
 wtf = {}
 
 def player(prev_play, opponent_history=[]):
+  #define a global dictionary
   global wtf
 
   n = 5
-
+  #if the entered exists in the list, append to the opponent's history
   if prev_play in ["R","P","S"]:
     opponent_history.append(prev_play)
 
   guess = "R" # default, until statistic kicks in
-
+  
+  #if the length of the list surpasses 5
   if len(opponent_history)>n:
     inp = "".join(opponent_history[-n:])
 
